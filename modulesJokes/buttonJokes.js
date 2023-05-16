@@ -9,8 +9,9 @@ export function setupButtons() {
             .then(response => displayJoke(response.joke))
             .catch(error => console.log(error));
     });
-
-    document.querySelector('#search-joke').addEventListener('click', function () {
+    const formulario = document.querySelector('.form')
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault()
         clearJokes();
         const searchQuery = document.querySelector('#search').value;
         if (searchQuery) {
@@ -24,5 +25,6 @@ export function setupButtons() {
                 })
                 .catch(error => console.log(error));
         }
+        formulario.reset()
     });
 }
