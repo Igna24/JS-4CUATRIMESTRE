@@ -1,0 +1,47 @@
+[
+	{
+    "id": 0,
+    "name": "Black shirt",
+    "gallery": "./img/camisanegra.jpeg",
+    "price": "$25"
+   },	{
+    "id": 1,
+    "name": "White shirt",
+    "gallery": "./img/camisablanca.jpeg",
+    "price":"$25"
+   },
+   {
+    "id": 3,
+    "name": "Black poster",
+    "gallery": "./img/posternegro.jpeg",
+    "price": "$25"
+   },	{
+    "id": 4,
+    "name": "White poster",
+    "gallery": "./img/posterblanco.jpeg",
+    "price":"$25"
+   },
+   {
+    "id": 5,
+    "name": "Black almohada",
+    "gallery": "./img/almohadanegra.jpeg",
+    "price": "$25"
+   },	{
+    "id": 6,
+    "name": "White almohada",
+    "gallery": "./img/almohadablanca.jpeg",
+    "price":"$25"
+   },
+   {
+    "id": 7,
+    "name": "Black case",
+    "gallery": "./img/casenegro.jpeg",
+    "price": "$25"
+   },	{
+    "id": 8,
+    "name": "White case",
+    "gallery": "./img/caseblanco.jpeg",
+    "price":"$25"
+   }
+   
+]

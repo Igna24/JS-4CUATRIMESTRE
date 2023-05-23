@@ -18,6 +18,7 @@ export function setupButtons() {
             getJoke('https://icanhazdadjoke.com/search?term=' + searchQuery)
                 .then(response => {
                     if (response.results.length > 0) {
+                        localStorage.setItem('jokes',response.results)
                         response.results.forEach(result => displayJoke(result.joke));
                     } else {
                         displayJoke('No hubo resultados');
