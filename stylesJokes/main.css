@@ -4,7 +4,7 @@ body {
   background-color: #f4f4f4;
 }
 
-button {
+.buttonStyles {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 18px;
@@ -15,7 +15,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.buttonStyles:hover {
   background-color: #0056b3;
 }
 
@@ -28,7 +28,7 @@ input[type="text"] {
   border-radius: 5px;
 }
 
-a{
+a {
   text-decoration: none;
   color: #8c8c8c;
 }
@@ -51,7 +51,7 @@ img {
   align-items: center;
 }
 
-.squareJoke{
+.squareJoke {
   border: 3px grey solid;
   border-radius: 10px;
   padding: 10px;
@@ -60,6 +60,40 @@ img {
   align-items: center;
 }
 
-.joke-display p{
+.joke-display p {
   width: 300px;
+}
+
+main {
+  display: flex;
+}
+
+.orderButton{
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+.visualizer {
+  height: 437px;
+}
+
+.visualizer__img {
+  width: 700px;
+  height: 400px;
+  object-fit: contain;
+}
+
+.visualizer__joke {
+  position: relative;
+  width: 210px;
+  top: -292px;
+  left: 252px;
+}
+
+.with-black-img {
+  color: #fff;
+}
+
+.other-products__wrapper button {
+  margin-right: 20px;
 }
