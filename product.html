@@ -10,13 +10,12 @@
 </head>
 
 <body>
+  <div> <a href="index.html"> vamos al inicio</a></div>
   <main class="main">
     <section class="product-wrap">
       <div class="visualizer">
         <img id="main-img" class="visualizer__img" src="images/product-shirt-white.jpg" />
-        <p id="main-joke" class="visualizer__joke">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-          repudiandae odit tempore architecto mollitia unde voluptatum! Ut nobis nisi ducimus? Nihil rem cupiditate
-          atque cumque necessitatibus consequuntur enim perferendis iusto!</p>
+        <p id="main-joke" class="visualizer__joke"></p>
         </form>
       </div>
       <div class="orderButton">
@@ -33,9 +32,7 @@
     <section class="product-details">
       <h1 id="title">White shirt with joke</h1>
       <p id="price">$20</p>
-      <p id="selected-joke">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repudiandae odit tempore
-        architecto mollitia unde voluptatum! Ut nobis nisi ducimus? Nihil rem cupiditate atque cumque necessitatibus
-        consequuntur enim perferendis iusto!</p>
+      <p id="main-joke"></p>
       <form action="" class="form">
         <button class="buttonStyles" id="random-joke">Obtener Chiste Aleatorio</button>
         <div id="joke-list"></div>
@@ -48,6 +45,7 @@
   </section>
   <script src="./productJS/mainProduct.js" type="module"></script>
   <script src="./JavaScriptJokes/main.js" type="module"></script>
+  <script src="./productJS/modulesProduct/jokeShow.js " type="module"></script>
 </body>
 
 </html>

@@ -4,13 +4,19 @@ import { setupButtons } from '../modulesJokes/buttonJokes.js';
 // Función para mostrar un chiste
 export function displayJoke(joke) {
   const jokeList = document.querySelector('#joke-list');
-  const jokeAnchor = document.createElement('a')
+  const jokeAnchor = document.createElement('a');
   const jokeItem = document.createElement('p');
-  jokeAnchor.href='product.html'
-  jokeAnchor.appendChild(jokeItem)
+  
+  jokeAnchor.addEventListener('click', function() {
+    const encodedJoke = encodeURIComponent(joke); //esto codifica el chiste para incluirlo en la URL y llevarlo a product
+    location.assign(`product.html?joke=${encodedJoke}`);
+  });
+
+  jokeAnchor.appendChild(jokeItem);
   jokeItem.textContent = joke;
   jokeList.appendChild(jokeAnchor);
 }
+
 
 // Función para limpiar los chistes antiguos
 export function clearJokes() {

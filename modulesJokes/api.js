@@ -1,20 +1,13 @@
-// Función para hacer una petición GET a la API
-export function getJoke(url) {
-    return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.setRequestHeader('Accept', 'application/json');
-        xhr.onreadystatechange = function () {
-            // estado en 4 significa que la solicitud fue realizada y esta lista
-            if (xhr.readyState === 4) {
-                //estado 200 indica que la promesa se realizo con exito
-                if (xhr.status === 200) {
-                    resolve(JSON.parse(xhr.responseText));
-                } else {
-                    reject(xhr.status);
-                }
-            }
+//conectando el API
+export async function getJoke(url) {
+    const response = await fetch(url, {
+        headers: {
+            'Accept': 'application/json'
         }
-        xhr.send();
     });
-}
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error('Error de red: ' + response.status);
+    }
+  }
