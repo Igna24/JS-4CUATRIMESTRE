@@ -15,7 +15,17 @@
     <button class="buttonStyles" id="search-joke">Buscar Chiste</button>
     <div id="joke-list"></div>
   </form>
+  <button id="open-cart-button" class="buttonStyles">Abrir Carrito</button>
+  <div id="cart-overlay" class="cart-overlay">
+    <div class="cart">
+      <h2>Carrito de Compras</h2>
+      <div id="cart-items"></div>
+      <button id="close-cart-button" class="buttonStyles">Cerrar Carrito</button>
+    </div>
+  </div>
   <script src="./JavaScriptJokes/main.js" type="module"></script>
-  <script type="module" src="./productJS/modulesProduct/jokeShow.js"></script>
+  <script src="./productJS/cart.js" type="module"></script>
+  <script src="./productJS/product.js" type="module"></script>
+  <script src="./productJS/cartController.js" type="module"></script>
 </body>
 </html>
