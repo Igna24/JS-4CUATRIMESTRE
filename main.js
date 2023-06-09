@@ -78,8 +78,6 @@ async function showEventsByCategory(category) {
     const fetchedEvents = await fetchEventsByCategory(category);
     renderEvents(fetchedEvents);
   }
-
-  // Resto del código para marcar la tab seleccionada y actualizar la interfaz
 }
 
 // Función para renderizar los eventos en la interfaz
