@@ -58,3 +58,25 @@ main {
 .event p {
   margin: 5px 0;
 }
+
+.favorite-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+  transition: color 0.3s ease;
+}
+
+.favorite-btn i {
+  font-size: 16px;
+}
+
+.favorite-btn.fas {
+  color: red;
+}
+
+.favorite-btn:hover {
+  color: red;
+}
+
