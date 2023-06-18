@@ -80,3 +80,30 @@ main {
   color: red;
 }
 
+.tabs {
+  margin-bottom: 20px;
+}
+
+.tabs ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.tabs li {
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.tabs li.active {
+  color: #f00; /* Color para resaltar la pestaña activa */
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}

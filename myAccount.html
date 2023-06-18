@@ -8,22 +8,16 @@
 </head>
 
 <body>
-  <header>
-    <h1>Eventos</h1>
-    <nav>
+  <main>
+    <nav class="tabs">
       <ul>
-        <li id="musicTab">Música</li>
-        <li id="sportsTab">Deportes</li>
-        <li id="businessTab">Negocios</li>
-        <li id="foodTab">Comida</li>
-        <li id="artTab">Arte</li>
+        <li class="tab" data-tab="favorites">Favorites</li>
+        <li class="tab" data-tab="interested">Interested</li>
+        <li class="tab" data-tab="going">Going</li>
       </ul>
     </nav>
-  </header>
 
-  <main>
-    <div id="eventList" class="event-list"></div>
-  </main>
+    <div class="event-grid" id="eventGrid"></div>
 
   <script src="main.js" type="module"></script>
 </body>

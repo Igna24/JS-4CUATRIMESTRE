@@ -1,3 +1,6 @@
+// import del estado de cada evento
+import State from './state.js';
+
 // Objeto para almacenar el caché de eventos
 const eventCache = {};
 
