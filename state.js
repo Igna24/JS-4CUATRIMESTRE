@@ -51,4 +51,5 @@ if (storedState) {
   State.state = JSON.parse(storedState);
 }
 
+// Exportar el objeto State para su uso en otros módulos
 export default State;
