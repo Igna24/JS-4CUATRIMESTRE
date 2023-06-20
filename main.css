@@ -2,34 +2,40 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+  background-color: rgb(243, 243, 243);
 }
 
 header h1 {
   margin: 0;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.nav-principal {
+  background-color: #000;
+  padding-top: 50px;
 }
 
-nav ul li {
-  display: inline-block;
-  margin-right: 10px;
-  padding: 5px 10px;
-  background-color: #555;
+.nav-principal ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.nav-principal li {
+  background-color: #000;
+  border-radius: 5px 5px 0px 0px;
+  border: none;
+  color: rgb(243, 243, 243);
+  font-size: 20px;
+  padding: 20px 50px 20px 50px;
   cursor: pointer;
 }
 
-nav ul li.active {
-  background-color: #333;
+.nav-principal li:hover { 
+  background-color:  rgb(243, 243, 243);
+  color: #000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 main {
@@ -43,8 +49,11 @@ main {
 }
 
 .event {
-  border: 1px solid #ddd;
+  background-color: #fff;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .event img {
@@ -59,13 +68,20 @@ main {
   margin: 5px 0;
 }
 
+.event button {
+  display: flex;
+}
+
 .favorite-btn {
-  display: inline-block;
-  background-color: transparent;
-  border: none;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #dddddd57;
   cursor: pointer;
-  color: red;
+  padding: 15px;
   transition: color 0.3s ease;
+  display: block;
+  margin-left: auto;
+  color: red;
 }
 
 .favorite-btn i {
@@ -98,12 +114,52 @@ main {
   color: #333;
 }
 
-.tabs li.active {
-  color: #f00; /* Color para resaltar la pestaña activa */
-}
-
 .event-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+
+.interaction-btns {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.event-date {
+  color: rgb(233, 105, 0);
+  font-weight: 600;
+}
+
+.event-location {
+  color: #6b6b6b;
+}
+
+.interested-btn {
+  background-color: #fff;
+
+  border-radius: 5px;
+  border: 2px solid rgb(0, 150, 196);
+  color: rgb(0, 150, 196);
+  cursor: pointer;
+  padding: 10px 10px 10px 10px;
+}
+
+.going-btn {
+  background-color:  rgb(0, 150, 196);
+
+  border-radius: 5px;
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 10px 10px 10px 10px;
+}
+
+.index-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.index-link:hover{
+  color: #000;
 }
