@@ -163,3 +163,24 @@ main {
 .index-link:hover{
   color: #000;
 }
+
+.event-day {
+  background-color: rgb(168, 168, 168);
+}
+.event-modal {
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.event-modal-content {
+  color: #333;
+}
+
+.dark-overlay {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.829); 
+  z-index: 9998; 
+}
