@@ -1,6 +1,9 @@
-import { getEventsByCategory, fetchEventsByCategory } from './eventHelpers.js';
+import { getEventsByCategory } from './eventHelpers.js';
 import { renderEvents } from './eventRenderer.js';
-import { toggleFavorite, toggleInterested, toggleGoing } from './eventActions.js';
+import { toggleFavorite } from '../buttons/favorite.js';
+import { toggleInterested } from '../buttons/interested.js';
+import { toggleGoing } from '../buttons/going.js';
+import { fetchEventsByCategory } from '../API/mainApi.js';
 
 export const eventList = document.getElementById('eventList');
 
@@ -29,6 +32,4 @@ export async function showEventsByCategory(category) {
   goingButtons.forEach(button => {
     button.addEventListener('click', toggleGoing);
   });
-
-  // Resto del código para marcar la tab seleccionada y actualizar la interfaz
 }

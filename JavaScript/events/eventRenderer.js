@@ -1,5 +1,7 @@
 import { eventList } from './eventList.js';
-import { formatDate, formatLocation, formatPrice } from '../helpers/format.js';
+import { formatDate } from '../formats/date.js';
+import { formatLocation } from '../formats/location.js';
+import { formatPrice } from '../formats/price.js';
 
 // Función para renderizar los eventos en la interfaz
 export function renderEvents(events) {
