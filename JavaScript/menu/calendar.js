@@ -1,55 +1,84 @@
-export function initializeCalendar() {
-  $(document).ready(function() {
-    // Hacer una llamada al API para obtener los eventos
-    $.ajax({
-      url: 'https://knassbani2.execute-api.us-east-2.amazonaws.com/events/sports',
-      method: 'GET',
-      success: function(response) {
-        var eventsData = response;
+const calendarElement = document.getElementById('calendar');
 
-        // Inicializar el calendario y configurar las opciones
-        $('#calendar').fullCalendar({
-          events: eventsData, // Asignar los eventos obtenidos del API
-          defaultView: 'month', // Vista predeterminada: mes
-          header: {
-            left:'prev,next,today',
-            center: 'title',
-            right:'month,agendaWeek,agendaDay'
-          },
-          eventRender: function(event, element) {
-            // Resaltar el día del evento
-            var eventDate = moment(event.start).format('YYYY-MM-DD');
-            $('.fc-day[data-date="' + eventDate + '"]').addClass('event-day');
-          },
-          eventMouseover: function(event, jsEvent, view) {
-            // Mostrar el modal con la descripción del evento cuando se pasa el mouse por encima
-            var modalContent = '<div class="event-modal">' +
-              '<div class="event-modal-content">' +
-              '<h3>' + event.title + '</h3>' +
-              '<p>Date: ' + moment(event.start).format('YYYY-MM-DD') + '</p>' +
-              '<p>Location: ' + event.location.city + ', ' + event.location.state + '</p>' +
-              '<p>Price: $' + event.price + '</p>' +
-              '</div>' +
-              '</div>';
-              $('body').append(modalContent);
-              $('body').addClass('dark-overlay');
-              $(this).css('z-index', 9999);
-              $('.event-modal').css({
-                top: jsEvent.pageY,
-                left: jsEvent.pageX
-              });
-          },
-          eventMouseout: function(event, jsEvent, view) {
-            // Ocultar el modal cuando se retira el mouse
-            $('.event-modal').remove();
-            $('body').removeClass('dark-overlay');
-          }
-        });
-      },
-      error: function() {
-        // Error al obtener los eventos del API
-        console.log('Error al obtener los eventos del API.');
-      }
-    });
-  });
+const currentDate = new Date();
+
+const months = [
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+];
+
+const daysOfWeek = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth();
+
+export function generateCalendar(year, month) {
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const numDays = lastDay.getDate();
+  let startDayIndex = firstDay.getDay();
+
+  let calendarHTML = '<table>';
+  calendarHTML += '<caption>';
+  calendarHTML += '<button onclick="prevMonth()">&lt;</button>';
+  calendarHTML += months[month] + ' ' + year;
+  calendarHTML += '<button onclick="nextMonth()">&gt;</button>';
+  calendarHTML += '</caption>';
+  calendarHTML += '<tr>';
+
+  for (let i = 0; i < daysOfWeek.length; i++) {
+    calendarHTML += '<th>' + daysOfWeek[i] + '</th>';
+  }
+
+  calendarHTML += '</tr><tr>';
+
+  let dayCount = 1;
+
+  for (let i = 0; i < startDayIndex; i++) {
+    calendarHTML += '<td></td>';
+  }
+
+  while (dayCount <= numDays) {
+    if (startDayIndex % 7 === 0 && startDayIndex !== 0) {
+      calendarHTML += '</tr><tr>';
+    }
+
+    calendarHTML += '<td>' + dayCount + '</td>';
+
+    dayCount++;
+    startDayIndex++;
+  }
+
+  while (startDayIndex % 7 !== 0) {
+    calendarHTML += '<td></td>';
+    startDayIndex++;
+  }
+
+  calendarHTML += '</tr>';
+  calendarHTML += '</table>';
+  calendarElement.innerHTML = calendarHTML;
 }
+
+window.prevMonth = function() {
+  if (currentMonth === 0) {
+    currentMonth = 11;
+    currentYear--;
+  } else {
+    currentMonth--;
+  }
+
+  generateCalendar(currentYear, currentMonth);
+};
+
+window.nextMonth = function() {
+  if (currentMonth === 11) {
+    currentMonth = 0;
+    currentYear++;
+  } else {
+    currentMonth++;
+  }
+
+  generateCalendar(currentYear, currentMonth);
+};
+
+generateCalendar(currentYear, currentMonth);

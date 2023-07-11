@@ -1,6 +1,6 @@
-import { initializeCalendar } from './menu/calendar.js';
-$(document).ready(function() {
-  $('.tab[data-tab="calendar"]').click(function() {
-    initializeCalendar();
-  });
-});
+import { generateCalendar } from './menu/calendar.js';
+
+const calendarElement = document.getElementById('calendar');
+const currentDate = new Date();
+
+generateCalendar(currentDate.getFullYear(), currentDate.getMonth());

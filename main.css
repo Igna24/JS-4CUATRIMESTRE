@@ -164,23 +164,15 @@ main {
   color: #000;
 }
 
-.event-day {
-  background-color: rgb(168, 168, 168);
-}
-.event-modal {
-  position: absolute;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  z-index: 1;
+.tab-container {
+  display: flex;
 }
 
-.event-modal-content {
-  color: #333;
+.tab-content {
+  display: none;
 }
 
-.dark-overlay {
-  color: #000;
-  background-color: rgba(0, 0, 0, 0.829); 
-  z-index: 9998; 
+.tab-content.active {
+  display: block;
 }
+

@@ -5,24 +5,33 @@
   <title>Eventos</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
 </head>
 
 <body>
-  <main>
-    <h1>My Account</h1>
+  <header>
     <nav class="nav-principal">
       <ul>
+        <li><a class="index-link"  href="index.html">← Back to Home</a></li>
         <li class="menu-item" data-state="interested">Interested</li>
         <li class="menu-item" data-state="going">Going</li>
         <li class="menu-item" data-state="favorite">Favorite</li>
       </ul>
     </nav>
     <section id="selectedEventsList"></section>
-  </main>
+  </header>
+  
+
+  
+
+  <div id="calendar">
+    <div class="calendar-header">
+      <button id="prevMonthBtn">&lt;</button>
+      <h2 id="monthYear"></h2>
+      <button id="nextMonthBtn">&gt;</button>
+    </div>
+    <table id="calendarTable"></table>
+  </div>
+  
 
   <script src="./JavaScript/account.js" type="module"></script>
 
