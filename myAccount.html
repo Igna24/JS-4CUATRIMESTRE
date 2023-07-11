@@ -13,19 +13,21 @@
 
 <body>
   <main>
-    <nav class="tabs">
+    <h1>My Account</h1>
+    <nav class="nav-principal">
       <ul>
-        <li class="tab" data-tab="favorites">Favorites</li>
-        <li class="tab" data-tab="interested">Interested</li>
-        <li class="tab" data-tab="going">Going</li>
-        <li class="tab" data-tab="calendar">Calendar</li>
+        <li class="menu-item" data-state="interested">Interested</li>
+        <li class="menu-item" data-state="going">Going</li>
+        <li class="menu-item" data-state="favorite">Favorite</li>
       </ul>
     </nav>
-    <div id='calendar'></div>
+    <section id="selectedEventsList"></section>
+  </main>
 
-    <div class="event-grid" id="eventGrid"></div>
+  <script src="./JavaScript/account.js" type="module"></script>
 
     <script src="/JavaScript/mainMyaccount.js" type="module"></script>
+    <script src="/JavaScript/account.js" type="module"></script>
 
 </body>
 

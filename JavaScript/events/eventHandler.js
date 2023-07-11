@@ -1,5 +1,7 @@
 import { eventList } from './eventList.js';
 import { showEventsByCategory } from './eventList.js';
+import { toggleInterested } from '../buttons/interested.js';
+import { toggleGoing } from '../buttons/going.js';
 
 export function addEventHandlers() {
   musicTab.addEventListener('click', () => {
