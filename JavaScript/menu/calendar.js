@@ -1,6 +1,5 @@
 const calendarElement = document.getElementById('calendar');
 const calendarTab = document.getElementById('calendarTab');
-
 const currentDate = new Date();
 
 const months = [
@@ -48,7 +47,7 @@ export function generateCalendar(year, month) {
       calendarHTML += '</tr><tr>';
     }
 
-    calendarHTML += '<td>' + dayCount + '</td>';
+    calendarHTML += '<td class="calendar-day">' + dayCount + '</td>';
 
     dayCount++;
     startDayIndex++;
@@ -73,6 +72,7 @@ window.prevMonth = function() {
   }
 
   generateCalendar(currentYear, currentMonth);
+  showEventsOnCalendar(currentYear, currentMonth);
 };
 
 window.nextMonth = function() {
@@ -84,9 +84,8 @@ window.nextMonth = function() {
   }
 
   generateCalendar(currentYear, currentMonth);
+  showEventsOnCalendar(currentYear, currentMonth);
 };
-
-generateCalendar(currentYear, currentMonth);
 
 export function showCalendarTab() {
   const tabContentElements = document.getElementsByClassName('tab-content');
@@ -94,8 +93,35 @@ export function showCalendarTab() {
     tabContentElements[i].style.display = 'none';
   }
   document.getElementById('calendarContainer').style.display = 'block';
+  showEventsOnCalendar(currentYear, currentMonth);
 }
 
-export function hideCalendarTab() {
-  document.getElementById('calendarContainer').style.display = 'none';
+import { getEventsByCategory } from '../events/eventHelpers.js';
+
+function showEventsOnCalendar(year, month) {
+  const calendarDays = calendarElement.getElementsByClassName('calendar-day');
+
+  Array.from(calendarDays).forEach(async dayElement => {
+    const dayNumber = parseInt(dayElement.textContent);
+
+    const events = await getEventsByCategory('food');
+
+    const eventsOnDay = events.filter(event => {
+      const eventDate = new Date(event.date);
+      return eventDate.getFullYear() === year && eventDate.getMonth() === month && eventDate.getDate() === dayNumber;
+    });
+
+    if (eventsOnDay.length > 0) {
+      const eventList = document.createElement('ul');
+      eventList.classList.add('event-list');
+
+      eventsOnDay.forEach(event => {
+        const listItem = document.createElement('li');
+        listItem.textContent = event.title;
+        eventList.appendChild(listItem);
+      });
+
+      dayElement.appendChild(eventList);
+    }
+  });
 }
