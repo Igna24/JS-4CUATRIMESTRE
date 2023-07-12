@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Eventos</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+
+</head>
+
+<body>
+  <header>
+    <nav class="nav-principal">
+      <ul>
+        <li><a href="index.html" class="index-link">index</a></li>
+        <li class="menu-item" data-state="interested">Interested</li>
+        <li class="menu-item" data-state="going">Going</li>
+        <li class="menu-item" data-state="favorite">Favorite</li>
+        <li id="calendarTab" class="menu-item" data-state="calendar">Calendar</li>
+      </ul>
+    </nav>
+    <div id="calendarContainer" class="tab-content"> <!-- Agregada la clase "tab-content" -->
+      <div id="calendar" class="calendar-tab"></div>
+    </div>
+    <section id="selectedEventsList"></section>
+  </header>
+  <script src="/JavaScript/mainMyaccount.js" type="module"></script>
+    <script src="/JavaScript/account.js"></script>
+
+</body>
+
+</html>
