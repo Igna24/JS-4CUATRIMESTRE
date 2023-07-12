@@ -10,15 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function showFilteredEvents(state) {
-    selectedEventsList.innerHTML = ''; // Vaciar contenido actual
-
+    selectedEventsList.innerHTML = ''; 
+  
     const selectedEvents = JSON.parse(localStorage.getItem('selectedEvents') || '[]');
     const filteredEvents = selectedEvents.filter(event => event.status === state);
-
+  
     filteredEvents.forEach(event => {
-      const eventElement = document.createElement('div');
-      eventElement.textContent = `Event ID: ${event.id}, Status: ${event.status}`;
-      selectedEventsList.appendChild(eventElement);
+      const eventCard = document.createElement('div');
+      eventCard.classList.add('event-card');
+  
+      const eventHTML = `
+        <img src="${event.image}" alt="Evento">
+        <h3>${event.title}</h3>
+        <p>Date: ${event.date}</p>
+        <p>Location: ${event.location}</p>
+        <p>Price: ${event.price}</p>
+        <p>Status: ${event.status}</p>
+      `;
+  
+      eventCard.innerHTML = eventHTML;
+      selectedEventsList.appendChild(eventCard);
     });
   }
+  
 });
