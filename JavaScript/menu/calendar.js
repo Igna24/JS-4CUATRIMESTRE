@@ -1,16 +1,21 @@
 const calendarElement = document.getElementById('calendar');
+const calendarTab = document.getElementById('calendarTab');
 
 const currentDate = new Date();
 
 const months = [
-  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+  'January ', 'February ', 'March ', 'April', 'May', 'June ',
+  'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const daysOfWeek = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', ' Friday ', 'Saturday'];
 
 let currentYear = currentDate.getFullYear();
 let currentMonth = currentDate.getMonth();
+
+calendarTab.addEventListener('click', () => {
+  showCalendarTab();
+});
 
 export function generateCalendar(year, month) {
   const firstDay = new Date(year, month, 1);
@@ -18,7 +23,7 @@ export function generateCalendar(year, month) {
   const numDays = lastDay.getDate();
   let startDayIndex = firstDay.getDay();
 
-  let calendarHTML = '<table>';
+  let calendarHTML = '<table class="calendar-table">';
   calendarHTML += '<caption>';
   calendarHTML += '<button onclick="prevMonth()">&lt;</button>';
   calendarHTML += months[month] + ' ' + year;
@@ -82,3 +87,15 @@ window.nextMonth = function() {
 };
 
 generateCalendar(currentYear, currentMonth);
+
+export function showCalendarTab() {
+  const tabContentElements = document.getElementsByClassName('tab-content');
+  for (let i = 0; i < tabContentElements.length; i++) {
+    tabContentElements[i].style.display = 'none';
+  }
+  document.getElementById('calendarContainer').style.display = 'block';
+}
+
+export function hideCalendarTab() {
+  document.getElementById('calendarContainer').style.display = 'none';
+}

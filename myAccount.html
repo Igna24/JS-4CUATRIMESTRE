@@ -6,24 +6,25 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+
 </head>
 
 <body>
-  <main>
-    <p><a href="index.html">index</a></p>
+  <header>
     <nav class="nav-principal">
       <ul>
+        <li><a href="index.html" class="index-link">index</a></li>
         <li class="menu-item" data-state="interested">Interested</li>
         <li class="menu-item" data-state="going">Going</li>
         <li class="menu-item" data-state="favorite">Favorite</li>
+        <li id="calendarTab" class="menu-item" data-state="calendar">Calendar</li>
       </ul>
     </nav>
+    <div id="calendarContainer" class="tab-content"> <!-- Agregada la clase "tab-content" -->
+      <div id="calendar" class="calendar-tab"></div>
+    </div>
     <section id="selectedEventsList"></section>
-  </main>
-
+  </header>
   <script src="/JavaScript/mainMyaccount.js" type="module"></script>
     <script src="/JavaScript/account.js"></script>
 

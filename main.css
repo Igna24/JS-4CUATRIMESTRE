@@ -176,3 +176,36 @@ main {
   display: block;
 }
 
+.calendar-tab {
+  width: 850px;
+  margin: 0 auto;
+}
+
+.calendar-tab table {
+  width: 100%; 
+}
+
+.calendar-tab caption {
+  font-weight: 600;
+  font-size: 20px
+}
+
+.calendar-tab td {
+  border-left: 1px solid #707070;
+  border-top: 1px solid #707070;
+  height: 80px; 
+  text-align: center; 
+  text-align: start;
+  vertical-align: middle;
+}
+
+
+.calendar-tab button {
+  background: none;
+  border-radius: 50%;
+  border: 2px solid #000;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 50px 50px 13px 50px;
+}
