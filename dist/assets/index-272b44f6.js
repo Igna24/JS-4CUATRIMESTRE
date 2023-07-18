@@ -1,0 +1,19 @@
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const r of s.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&l(r)}).observe(document,{childList:!0,subtree:!0});function a(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function l(t){if(t.ep)return;t.ep=!0;const s=a(t);fetch(t.href,s)}})();class h{constructor(){this.name="",this.soil="",this.pot="",this.potMaterial="",this.potStyle="",this.extras=[],this.plantImage=""}withPlantImage(e){return this.plantImage=e,this}withName(e){return this.name=m(e),this}withSoil(e){return this.soil=e,this}withPot(e){return this.pot=e,this}withPotMaterial(e){return this.potMaterial=e,this}withPotStyle(e){return this.potStyle=e,this}withExtras(e){return this.extras=e,this}build(){return{name:this.name,soil:this.soil,pot:this.pot,potMaterial:this.potMaterial,potStyle:this.potStyle,extras:this.extras}}}function m(i){return i.charAt(0).toUpperCase()+i.slice(1)}function f(i,e){const a=document.createElement("img");a.src=`./assets/images/pot-${i.pot.replace(" pot","")}.png`;const l=document.createElement("img");l.src=`./assets/images/plant-${i.name}.png`;const t=document.createElement("img");t.src=`./assets/images/soil-${i.soil.replace(" Soil","")}.png`,i.extras.forEach(r=>{const n=document.createElement("img");n.src=`./assets/images/${r}.png`,e.appendChild(n)}),e.innerHTML="",e.appendChild(a),e.appendChild(l),e.appendChild(t);const s=document.createElement("div");s.innerHTML=`
+  <p>The perfect plant for you is...</p>
+  <h3 class="plant-created-title">${i.name}</h3>
+  <div class="empty-container"></div>
+  <div class="result-container">
+    <div class="result-text-left">
+      <p>Name</p>
+      <p>Soil</p>
+      <p>Pot</p>
+      <p>Extras</p>
+    </div>
+    <div class="result-text-right">
+      <p>${i.name}</p>
+      <p>${i.soil}</p>
+      <p>${i.pot}</p>
+      <p>${i.extras.join(", ")}</p>
+    </div>  
+  </div>
+  `,e.appendChild(s),e.style.display="block"}function y(i,e){document.getElementById("clearButton").addEventListener("click",()=>{i.reset();const l=e.style;l.display="none"})}function g(){const i=document.getElementById("form"),e=document.getElementById("recommendation");i.addEventListener("submit",a=>{a.preventDefault();const l=document.querySelector('input[name="place"]:checked'),t=document.querySelector('input[name="sunlight"]:checked'),s=document.querySelector('input[name="pets"]:checked'),r=document.querySelector('input[name="water"]:checked'),n=document.querySelector('input[name="style"]:checked'),c=Array.from(document.querySelectorAll('input[name="extras"]:checked'));if(l&&t&&s&&r&&n){const o=new h;l.value==="inside_indirect"?o.withName("Sansevieria").withPlantImage("plant-sansevieria"):l.value==="inside_lot"?o.withName("Aglaonema").withPlantImage("plant-aglaonema"):l.value==="outside"&&o.withName("Aloe").withPlantImage("plant-aloe"),t.value==="yes"?o.withSoil("Composted Soil"):t.value==="no"&&o.withSoil("Fertilized Soil"),s.value==="yes"?(o.withPot("Ceramic pot"),o.withPotStyle("Substitute the soil for the easy drainage soil")):s.value==="no"&&o.withPot("Ceramic pot"),r.value==="overwater"?o.withPotMaterial("Clay pot"):(r.value==="underwater"||r.value==="neither")&&o.withPotMaterial("Ceramic pot"),n.value==="minimalism"?o.withPotStyle("Simple pot"):n.value==="decoration"?o.withPotStyle("Simple pot decorated"):n.value==="bright_colors"&&o.withPotStyle("Painted pot decorated");const u=c.map(d=>d.value);o.withExtras(u);const p=o.build();f(p,e)}else alert("check all boxes")}),y(i,e)}g();
