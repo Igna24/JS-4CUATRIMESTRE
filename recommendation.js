@@ -45,8 +45,15 @@ export default function recomendedPlant(recommendation, plantContainer) {
       <p>${recommendation.extras.join(", ")}</p>
     </div>  
   </div>
+  <button id="customizeButton" class="customize-button">Customize</button>
   `;
   plantContainer.appendChild(recommendationInfo);
+  // Manejar el evento click del botón "Customize"
+  const customizeButton = document.getElementById("customizeButton");
+  customizeButton.addEventListener("click", () => {
+    // Redireccionar al usuario a la página de customización
+    window.location.href = "customize.html";
+  });
   // eslint-disable-next-line no-param-reassign
   plantContainer.style.display = "block";
 }

@@ -62,10 +62,22 @@ export default function initializeForm() {
       const recommendation = builder.build();
 
       recomendedPlant(recommendation, plantContainer);
+
+      // Guardar la recomendación en el localStorage
+      localStorage.setItem("recommendation", JSON.stringify(recommendation));
     } else {
       // eslint-disable-next-line no-alert
-      alert("check all boxes");
+      alert("Please check all boxes");
     }
   });
+
+  // Recuperar la recomendación guardada en LocalStorage al cargar la página
+  const storedRecommendation = JSON.parse(
+    localStorage.getItem("recommendation"),
+  );
+  if (storedRecommendation) {
+    recomendedPlant(storedRecommendation, plantContainer);
+  }
+
   handleClearButton(form, plantContainer);
 }
