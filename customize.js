@@ -20,7 +20,7 @@ function loadPreviewImages(data) {
   plantPreviewImage.appendChild(potImage);
 
   const plantImage = document.createElement("img");
-  plantImage.src = `./assets/images/${data.plantImage}.png`;
+  plantImage.src = `./assets/images/plant-${data.name}.png`;
   plantPreviewImage.appendChild(plantImage);
 
   const soilImage = document.createElement("img");
@@ -38,7 +38,7 @@ function loadPreviewData(data) {
   document.getElementById("previewPlantName").textContent = data.name;
   document.getElementById("previewSoil").textContent = data.soil;
   document.getElementById("previewPot").textContent = data.pot;
-  document.getElementById("previewPotColor").textContent = data.potColor;
+  document.getElementById("previewPotColor").textContent = data.potStyle;
   document.getElementById("previewExtras").textContent = Array.isArray(
     data.extras,
   )
@@ -94,6 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (place === "outside") {
         recommendation.name = "Aloe Vera";
         recommendation.plantImage = "plant-aloe";
+      } else {
+        // Handle unknown place (optional)
+        recommendation.name = "Unknown Plant";
+        recommendation.plantImage = "unknown-plant-image";
       }
 
       recommendation.soil =
@@ -116,22 +120,26 @@ document.addEventListener("DOMContentLoaded", () => {
         recommendation.potStyle = "Painted pot decorated";
       }
 
+      // Get the selected pot color from the "potColor" radio buttons
+      const potColor = formData.get("potColor");
+      recommendation.potColor = potColor || "No color"; // Set a default value if no pot color is selected
+
       // Get the selected plant from the "plantSelect" dropdown
       const plantSelect = formData.get("plant");
       recommendation.plantImage = `plant-${plantSelect
         .toLowerCase()
         .replace(" ", "-")}`;
 
-      // Get the selected pot color from the "potColor" radio buttons
-      const potColor = formData.get("potColor");
-      recommendation.potColor = potColor || "No color"; // Set a default value if no pot color is selected
-
       recommendedPlant(
         recommendation,
         document.getElementById("plant-preview"),
       );
-      loadPreviewImages(recommendation);
+
+      // Save the recommendation in localStorage
       localStorage.setItem("recommendation", JSON.stringify(recommendation));
+
+      // Load the preview data into the customize form
+      loadPreviewData(recommendation);
     } else {
       showError("Please check all boxes");
     }

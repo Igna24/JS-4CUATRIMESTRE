@@ -1,4 +1,12 @@
-export default function recomendedPlant(recommendation, plantContainer) {
+function createImage(filename) {
+  const img = document.createElement("img");
+  img.src = `./assets/images/${filename}.png`;
+  return img;
+}
+
+export default function recommendedPlant(recommendation, plantContainer) {
+  const container = plantContainer;
+
   const imgPot = document.createElement("img");
   imgPot.src = `./assets/images/pot-${recommendation.pot.replace(
     " pot",
@@ -14,46 +22,45 @@ export default function recomendedPlant(recommendation, plantContainer) {
     "",
   )}.png`;
 
+  const extrasContainer = document.createElement("div");
+  extrasContainer.className = "extras-container";
+
   recommendation.extras.forEach((extra) => {
-    const extraImage = document.createElement("img");
-    extraImage.src = `./assets/images/${extra}.png`;
-    plantContainer.appendChild(extraImage);
+    const extraImage = createImage(extra);
+    extrasContainer.appendChild(extraImage);
   });
 
-  // eslint-disable-next-line no-param-reassign
-  plantContainer.innerHTML = "";
-  plantContainer.appendChild(imgPot);
-  plantContainer.appendChild(imgPlant);
-  plantContainer.appendChild(imgSoil);
+  container.innerHTML = "";
+  container.appendChild(imgPot);
+  container.appendChild(imgPlant);
+  container.appendChild(imgSoil);
+  container.appendChild(extrasContainer);
 
   const recommendationInfo = document.createElement("div");
   recommendationInfo.innerHTML = `
-  <p>The perfect plant for you is...</p>
-  <h3 class="plant-created-title">${recommendation.name}</h3>
-  <div class="empty-container"></div>
-  <div class="result-container">
-    <div class="result-text-left">
-      <p>Name</p>
-      <p>Soil</p>
-      <p>Pot</p>
-      <p>Extras</p>
+    <p>The perfect plant for you is...</p>
+    <h3 class="plant-created-title">${recommendation.name}</h3>
+    <div class="empty-container"></div>
+    <div class="result-container">
+      <div class="result-text-left">
+        <p>Name</p>
+        <p>Soil</p>
+        <p>Pot</p>
+        <p>Extras</p>
+      </div>
+      <div class="result-text-right">
+        <p>${recommendation.name}</p>
+        <p>${recommendation.soil}</p>
+        <p>${recommendation.pot}</p>
+        <p>${recommendation.extras.join(", ")}</p>
+      </div>  
     </div>
-    <div class="result-text-right">
-      <p>${recommendation.name}</p>
-      <p>${recommendation.soil}</p>
-      <p>${recommendation.pot}</p>
-      <p>${recommendation.extras.join(", ")}</p>
-    </div>  
-  </div>
-  <button id="customizeButton" class="customize-button">Customize</button>
+    <button id="customizeButton" class="customize-button">Customize</button>
   `;
-  plantContainer.appendChild(recommendationInfo);
-  // Manejar el evento click del botón "Customize"
+  container.appendChild(recommendationInfo);
   const customizeButton = document.getElementById("customizeButton");
   customizeButton.addEventListener("click", () => {
-    // Redireccionar al usuario a la página de customización
     window.location.href = "customize.html";
   });
-  // eslint-disable-next-line no-param-reassign
-  plantContainer.style.display = "block";
+  container.style.display = "block";
 }

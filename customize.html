@@ -8,12 +8,12 @@
 </head>
 <body style="display: flex;">
 
-  <div class="wrapper customize-form">
+  <div class="customize-form">
     <form id="customizeForm" class="main-form">
       <h1 class="main-title">Customize Your Order</h1>
       <div class="question">
         <label>Choose your pot:</label>
-        <div class="options">
+        <div class="options options_position">
           <div>
             <input type="radio" id="clayPot" name="pot" value="Clay" class="radio-purple">
             <label for="clayPot">Clay</label>
@@ -40,25 +40,25 @@
 
       <div class="question" id="potColorOptions">
         <label>Choose pot color:</label>
-        <div class="options">
+        <div class="options options_color">
           <div>
             <input type="radio" id="blueColor" name="potColor" value="Blue" class="radio-purple">
-            <label for="blueColor">Blue</label>
+            <label for="blueColor"></label>
           </div>
 
           <div>
             <input type="radio" id="pinkColor" name="potColor" value="Pink" class="radio-purple">
-            <label for="pinkColor">Pink</label>
+            <label for="pinkColor"></label>
           </div>
 
           <div>
             <input type="radio" id="greenColor" name="potColor" value="Green" class="radio-purple">
-            <label for="greenColor">Green</label>
+            <label for="greenColor"></label>
           </div>
 
           <div>
             <input type="radio" id="purpleColor" name="potColor" value="Purple" class="radio-purple">
-            <label for="purpleColor">Purple</label>
+            <label for="purpleColor"></label>
           </div>
         </div>
       </div>
@@ -123,15 +123,23 @@
   <div class="plant-preview plant-created" id="plant-preview">
     <h2>Plant Preview</h2>
     <div class="plant-info">
-      <p>Name: <span id="previewPlantName"></span></p>
-      <p>Soil: <span id="previewSoil"></span></p>
-      <p>Pot: <span id="previewPot"></span></p>
-      <p>Color: <span id="previewPotColor"></span></p>
-      <p>Extras: <span id="previewExtras"></span></p>
+      <div class="result-text-left">
+        <p>Name:</p>
+        <p>Soil:</p>
+        <p>Pot:</p>
+        <p>Extras:</p>
+      </div>
+      <div>
+        <p id="previewPlantName"></p>
+        <p id="previewSoil"></p>
+        <p id="previewPot"></p>
+        <p id="previewPotColor"></p>
+        <p id="previewExtras"></p>
+      </div>
     </div>
     <div class="plant-image" id="plantPreviewImage"></div>
   </div>
-
+  
   <script src="./customize.js" type="module"></script>
 </body>
 </html>
