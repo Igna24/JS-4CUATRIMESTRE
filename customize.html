@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
   <title>Customize Your Order</title>
 </head>
+
 <body style="display: flex;">
 
   <div class="customize-form">
     <form id="customizeForm" class="main-form">
-      <h1 class="main-title">Customize Your Order</h1>
       <div class="question">
-        <label>Choose your pot:</label>
-        <div class="options options_position">
+        <label>Choose your pot material:</label>
+        <div class="options">
           <div>
-            <input type="radio" id="clayPot" name="pot" value="Clay" class="radio-purple">
-            <label for="clayPot">Clay</label>
+            <input type="radio" id="potMaterialCeramic" name="potMaterial" value="Ceramic" class="radio-purple">
+            <label for="potMaterialCeramic">Ceramic</label>
           </div>
 
           <div>
-            <input type="radio" id="ceramicPot" name="pot" value="Ceramic" class="radio-purple">
-            <label for="ceramicPot">Ceramic</label>
+            <input type="radio" id="potMaterialClay" name="potMaterial" value="Clay" class="radio-purple">
+            <label for="potMaterialClay">Clay</label>
           </div>
         </div>
       </div>
@@ -61,17 +62,18 @@
             <label for="purpleColor"></label>
           </div>
         </div>
+
       </div>
 
       <div class="question">
         <label>Choose your plant:</label>
         <select id="plantSelect" name="plant">
-          <option value="Aglaonema Silver Bay">Aglaonema Silver Bay</option>
-          <option value="Aloe Vera">Aloe Vera</option>
-          <option value="Boston Fern">Boston Fern</option>
+          <option value="Aglaonema">Aglaonema Silver Bay</option>
+          <option value="Aloe">Aloe Vera</option>
+          <option value="Fern">Boston Fern</option>
           <option value="Cactus">Cactus</option>
-          <option value="Monstera Deliciosa">Monstera Deliciosa</option>
-          <option value="Peace Lily">Peace Lily</option>
+          <option value="Monstera">Monstera Deliciosa</option>
+          <option value="Peace-Lily">Peace Lily</option>
           <option value="Sansevieria">Sansevieria</option>
         </select>
       </div>
@@ -80,17 +82,17 @@
         <label>Choose your soil:</label>
         <div class="options">
           <div>
-            <input type="radio" id="compostedSoil" name="soil" value="Basic composted soil" class="radio-purple">
+            <input type="radio" id="compostedSoil" name="soil" value="composted" class="radio-purple">
             <label for="compostedSoil">Basic composted soil</label>
           </div>
 
           <div>
-            <input type="radio" id="fertilizedSoil" name="soil" value="Premium fertilized soil" class="radio-purple">
+            <input type="radio" id="fertilizedSoil" name="soil" value="fertilized" class="radio-purple">
             <label for="fertilizedSoil">Premium fertilized soil</label>
           </div>
 
           <div>
-            <input type="radio" id="drainageSoil" name="soil" value="Easy drainage soil" class="radio-purple">
+            <input type="radio" id="drainageSoil" name="soil" value="drainage" class="radio-purple">
             <label for="drainageSoil">Easy drainage soil</label>
           </div>
         </div>
@@ -100,7 +102,7 @@
         <label>Choose your extras:</label>
         <div class="options">
           <div>
-            <input type="checkbox" id="mossPole" name="extras" value="Moss pole">
+            <input type="checkbox" id="mossPole" name="extras" value="Moss-pole">
             <label for="mossPole">Moss pole</label>
           </div>
 
@@ -110,7 +112,7 @@
           </div>
 
           <div>
-            <input type="checkbox" id="smallerPlants" name="extras" value="Smaller plants">
+            <input type="checkbox" id="smallerPlants" name="extras" value="mini-plants">
             <label for="smallerPlants">Smaller plants</label>
           </div>
         </div>
@@ -138,8 +140,10 @@
       </div>
     </div>
     <div class="plant-image" id="plantPreviewImage"></div>
+
   </div>
-  
+
   <script src="./customize.js" type="module"></script>
 </body>
+
 </html>

@@ -36,24 +36,24 @@ export default function initializeForm() {
       }
 
       if (pets.value === "yes") {
-        builder.withPot("Ceramic pot");
+        builder.withPot("ceramic-unpainted");
         builder.withPotStyle("Substitute the soil for the easy drainage soil");
       } else if (pets.value === "no") {
-        builder.withPot("Ceramic pot");
+        builder.withPot("ceramic-unpainted");
       }
 
       if (water.value === "overwater") {
-        builder.withPotMaterial("Clay pot");
+        builder.withPotMaterial("pot-clay-simple-blue");
       } else if (water.value === "underwater" || water.value === "neither") {
-        builder.withPotMaterial("Ceramic pot");
+        builder.withPotMaterial("ceramic-unpainted");
       }
 
       if (style.value === "minimalism") {
-        builder.withPotStyle("Simple pot");
+        builder.withPotStyle("pot-ceramic-blue");
       } else if (style.value === "decoration") {
-        builder.withPotStyle("Simple pot decorated");
+        builder.withPotStyle("pot-ceramic-decorated-green");
       } else if (style.value === "bright_colors") {
-        builder.withPotStyle("Painted pot decorated");
+        builder.withPotStyle("pot-ceramic-decorated-purple");
       }
 
       const extrasList = extras.map((extra) => extra.value);
