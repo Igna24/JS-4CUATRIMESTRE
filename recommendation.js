@@ -7,11 +7,25 @@ function createImage(filename) {
 export default function recommendedPlant(recommendation, plantContainer) {
   const container = plantContainer;
 
+  const storedRecommendation = JSON.parse(
+    localStorage.getItem("recommendation"),
+  );
+
   const imgPot = document.createElement("img");
-  imgPot.src = `./assets/images/pot-${recommendation.pot.replace(
-    " pot",
-    "",
-  )}.png`;
+  if (storedRecommendation) {
+    const potStyle =
+      storedRecommendation.potStyle === "Decorated pot"
+        ? "decorated-"
+        : "simple-";
+    const potColor = storedRecommendation.potColor.toLowerCase();
+    const potMaterial = storedRecommendation.potMaterial.toLowerCase();
+    imgPot.src = `./assets/images/pot-${potMaterial}-${potStyle}${potColor}.png`;
+  } else {
+    imgPot.src = `./assets/images/pot-${recommendation.pot.replace(
+      " pot",
+      "",
+    )}.png`;
+  }
 
   const imgPlant = document.createElement("img");
   imgPlant.src = `./assets/images/plant-${recommendation.name}.png`;
@@ -51,13 +65,14 @@ export default function recommendedPlant(recommendation, plantContainer) {
       <div class="result-text-right">
         <p>${recommendation.name}</p>
         <p>${recommendation.soil}</p>
-        <p>${recommendation.pot}</p>
+        <p>${recommendation.potColor}</p>
         <p>${recommendation.extras.join(", ")}</p>
       </div>  
     </div>
     <button id="customizeButton" class="customize-button">Customize</button>
   `;
   container.appendChild(recommendationInfo);
+
   const customizeButton = document.getElementById("customizeButton");
   customizeButton.addEventListener("click", () => {
     window.location.href = "customize.html";

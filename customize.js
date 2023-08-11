@@ -87,11 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
         extras: selectedExtras,
         potMaterial,
       };
-      recommendedPlant(customizedRecommendation, plantPreviewImage);
+
       localStorage.setItem(
-        "customizedRecommendation",
+        "recommendation",
         JSON.stringify(customizedRecommendation),
       );
+
+      recommendedPlant(customizedRecommendation, plantPreviewImage);
       loadPreviewData(customizedRecommendation);
     };
 
@@ -124,21 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
       chk.addEventListener("change", updatePreview);
     });
 
-    const storedRecommendation = JSON.parse(
-      localStorage.getItem("recommendation"),
-    );
+    const storedRecommendation =
+      JSON.parse(localStorage.getItem("recommendation")) || {};
     if (storedRecommendation) {
       loadPreviewData(storedRecommendation);
       plantSelect.value = storedRecommendation.name;
       soilOptions.forEach((option) => {
         if (option.value === storedRecommendation.soil) {
-          // eslint-disable-next-line no-param-reassign
           option.checked = true;
         }
       });
       extrasCheckboxes.forEach((chk) => {
         if (storedRecommendation.extras.includes(chk.value)) {
-          // eslint-disable-next-line no-param-reassign
           chk.checked = true;
         }
       });
