@@ -8,7 +8,8 @@ body {
   margin: 0 auto;
   justify-content: space-around;
 }
-.customize-form{
+
+.customize-form {
   width: 50%;
   width: 50%;
   margin: 28px 10px 35px 90px;
@@ -20,11 +21,11 @@ body {
   color: #5f5f5f;
 }
 
-.plant-created img{
+.plant-created img {
   bottom: 400px;
   position: absolute;
-  right: 156px;
-  top: 201px;
+  right: 187px;
+  top: 218px;
   width: 233px;
 }
 
@@ -40,7 +41,7 @@ body {
   color: #5f5f5f;
 }
 
-.question input{
+.question input {
   margin-bottom: 18px;
 }
 
@@ -73,7 +74,8 @@ input[type="radio"].radio-purple:checked {
   border: none;
   color: #fff;
   cursor: pointer;
-  padding: 13px 25px 12px 25px;
+  margin-top: 10px;
+  padding: 11px 25px 10px 25px;
 }
 
 .send-button:hover {
@@ -96,7 +98,8 @@ input[type="radio"].radio-purple:checked {
   background-color: #e7e7e7;
 }
 
-.clear-button ,.send-button  {
+.clear-button,
+.send-button {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -105,8 +108,8 @@ input[type="radio"].radio-purple:checked {
   color: #fff;
   text-align: center;
   margin-top: 30px;
-  width: 30%;
-  height: 800px;
+  width: 340px;
+  height: 679px;
   padding-top: 50px;
   background-color: #7859fa;
   border-radius: 10px;
@@ -137,16 +140,24 @@ input[type="radio"].radio-purple:checked {
   text-align: start;
 }
 
-.plant-image img {
+.plant-details img {
+  bottom: 400px;
   position: absolute;
-  right: 241px;
-  top: 210px;
-  width: 256px
+  left: 48px;
+  top: 201px;
+  width: 233px;
 }
 
-.plant-info{
+.plant-image img {
+  position: absolute;
+  right: 272px;
+  top: 161px;
+  width: 256px;
+}
+
+.plant-info {
   position: relative;
-  top: 433px;
+  top: 387px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -190,25 +201,25 @@ input[type="radio"].radio-purple:checked {
 }
 
 /* Estilos para mostrar previsualización del color antes de seleccionar */
-#clayPot:checked + label::before {
+#clayPot:checked+label::before {
   background-color: #ddd;
   color: #000;
 }
 
-#ceramicPot:checked + label::before {
+#ceramicPot:checked+label::before {
   background-color: #ddd;
   color: #000;
 }
 
 /* Estilos para los radio buttons seleccionados */
-#clayPot:checked + label::before {
+#clayPot:checked+label::before {
   content: "\2713";
   background-color: purple;
   border-color: purple;
   color: #fff;
 }
 
-#ceramicPot:checked + label::before {
+#ceramicPot:checked+label::before {
   content: "\2713";
   background-color: purple;
   border-color: purple;
@@ -242,7 +253,7 @@ input[type="radio"].radio-purple:checked {
 }
 
 /* Estilos para mostrar previsualización del color antes de seleccionar */
-#blueColor + label::before {
+#blueColor+label::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -254,7 +265,7 @@ input[type="radio"].radio-purple:checked {
   opacity: 0.6;
 }
 
-#pinkColor + label::before {
+#pinkColor+label::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -266,7 +277,7 @@ input[type="radio"].radio-purple:checked {
   opacity: 0.6;
 }
 
-#greenColor + label::before {
+#greenColor+label::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -278,7 +289,7 @@ input[type="radio"].radio-purple:checked {
   opacity: 0.6;
 }
 
-#purpleColor + label::before {
+#purpleColor+label::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -291,23 +302,92 @@ input[type="radio"].radio-purple:checked {
 }
 
 /* Estilos para los radio buttons seleccionados */
-#blueColor:checked + label {
+#blueColor:checked+label {
   border-color: blue;
   background-color: blue;
 }
 
-#pinkColor:checked + label {
+#pinkColor:checked+label {
   border-color: pink;
   background-color: pink;
 }
 
-#greenColor:checked + label {
+#greenColor:checked+label {
   border-color: green;
   background-color: green;
 }
 
-#purpleColor:checked + label {
+#purpleColor:checked+label {
   border-color: purple;
   background-color: purple;
 }
 
+.order-details {
+  position: absolute;
+  right: 118px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 508px;
+  top: 100px;
+}
+
+
+#orderNowButton {
+  background-color: #D1CDDE;
+  height: 40px;
+  width: 140px;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+  margin-bottom: 60px;
+}
+
+.order-details div,
+button {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.more-info-stock-header {
+  border-bottom: 1px solid #d4d4d4;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.more-info-stock-content {
+  display: none;
+  padding: 10px;
+}
+
+.more-info-stock-header {
+  cursor: pointer;
+}
+
+.more-info-stock-content.active {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.caring-tips-category {
+  text-align: start;
+}
+.more-info-stock-content.active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

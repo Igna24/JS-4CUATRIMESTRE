@@ -68,13 +68,13 @@
       <div class="question">
         <label>Choose your plant:</label>
         <select id="plantSelect" name="plant">
-          <option value="Aglaonema">Aglaonema Silver Bay</option>
-          <option value="Aloe">Aloe Vera</option>
-          <option value="Fern">Boston Fern</option>
-          <option value="Cactus">Cactus</option>
-          <option value="Monstera">Monstera Deliciosa</option>
-          <option value="Peace-Lily">Peace Lily</option>
-          <option value="Sansevieria">Sansevieria</option>
+          <option value="aglaonema">Aglaonema Silver Bay</option>
+          <option value="aloe">Aloe Vera</option>
+          <option value="fern">Boston Fern</option>
+          <option value="cactus">Cactus</option>
+          <option value="monstera">Monstera Deliciosa</option>
+          <option value="peace-Lily">Peace Lily</option>
+          <option value="sansevieria">Sansevieria</option>
         </select>
       </div>
 
@@ -117,30 +117,32 @@
           </div>
         </div>
       </div>
-
-      <button type="submit" class="send-button">Customize</button>
     </form>
   </div>
 
-  <div class="plant-preview plant-created" id="plant-preview">
-    <h2>Plant Preview</h2>
-    <div class="plant-info">
-      <div class="result-text-left">
-        <p>Name:</p>
-        <p>Soil:</p>
-        <p>Pot:</p>
-        <p>Extras:</p>
+  <div>
+    <div class="plant-preview plant-created" id="plant-preview">
+      <h2>Plant Preview</h2>
+      <div class="plant-info">
+        <div class="result-text-left">
+          <p>Name:</p>
+          <p>Soil:</p>
+          <p>Pot:</p>
+          <p>Extras:</p>
+        </div>
+        <div>
+          <p id="previewPlantName"></p>
+          <p id="previewSoil"></p>
+          <p id="previewPot"></p>
+          <p id="previewPotColor"></p>
+          <p id="previewExtras"></p>
+        </div>
       </div>
-      <div>
-        <p id="previewPlantName"></p>
-        <p id="previewSoil"></p>
-        <p id="previewPot"></p>
-        <p id="previewPotColor"></p>
-        <p id="previewExtras"></p>
-      </div>
+      <div class="plant-image" id="plantPreviewImage"></div>
     </div>
-    <div class="plant-image" id="plantPreviewImage"></div>
-
+    <div class="button-container">
+      <a href="order_details.html" type="submit" class="send-button">check store avaliability</a>
+    </div>
   </div>
 
   <script src="./customize.js" type="module"></script>

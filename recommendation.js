@@ -16,7 +16,7 @@ export default function recommendedPlant(recommendation, plantContainer) {
     const potStyle =
       storedRecommendation.potStyle === "Decorated pot"
         ? "decorated-"
-        : "simple-";
+        : "";
     const potColor = storedRecommendation.potColor.toLowerCase();
     const potMaterial = storedRecommendation.potMaterial.toLowerCase();
     imgPot.src = `./assets/images/pot-${potMaterial}-${potStyle}${potColor}.png`;

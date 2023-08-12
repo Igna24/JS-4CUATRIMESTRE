@@ -7,17 +7,19 @@
     "eslint": "eslint",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write \"*.js\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.45.0",
+    "eslint": "^8.0.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "3.0.0",
+    "prettier": "^2.4.1",
     "vite": "^4.4.4"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.14.0"
   }
 }

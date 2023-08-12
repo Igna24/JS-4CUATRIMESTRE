@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         name: selectedPlant,
         soil,
         pot: "",
-        potStyle: potDecorations === "on" ? "Decorated pot" : "Simple pot",
+        potStyle: potDecorations === "on" ? "Decorated pot" : "pot",
         potColor: potColor || "unpainted",
         extras: selectedExtras,
         potMaterial,
