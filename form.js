@@ -63,7 +63,6 @@ export default function initializeForm() {
 
       recomendedPlant(recommendation, plantContainer);
 
-      // Guardar la recomendación en el localStorage
       localStorage.setItem('recommendation', JSON.stringify(recommendation));
     } else {
       // eslint-disable-next-line no-alert
@@ -71,7 +70,6 @@ export default function initializeForm() {
     }
   });
 
-  // Recuperar la recomendación guardada en LocalStorage al cargar la página
   const storedRecommendation = JSON.parse(
     localStorage.getItem('recommendation'),
   );

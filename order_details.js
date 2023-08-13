@@ -187,9 +187,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Desglose de precios
   const priceBreakdownTitleElement = document.createElement('h4');
-  priceBreakdownTitleElement.textContent = 'Price Breakdown'; // Cambiar el contenido del título si lo deseas
+  priceBreakdownTitleElement.textContent = 'Price Breakdown';
   priceBreakdownContent.appendChild(priceBreakdownTitleElement);
 
   const priceListElement = document.createElement('ul');

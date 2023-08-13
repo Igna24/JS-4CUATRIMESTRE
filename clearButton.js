@@ -9,7 +9,6 @@ export default function handleClearButton(form, plantContainer) {
     container.innerHTML = '';
     container.style.display = 'none';
 
-    // Eliminar la recomendación guardada en el localStorage
     localStorage.removeItem('recommendation');
   });
 }
