@@ -1,76 +1,79 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>Your Plant | Order</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./main.css" />
-  <title>Your Plant | Order</title>
-</head>
-
-<body>
-  <div>
-    <div class="plant-created plant-details" id="plant-preview">
-      <div class="plant-preview order-plant" id="plant-preview">
-        <h2>Your Plant</h2>
-        <div class="empty-container"></div>
-        <div class="result-container">
-          <div class="result-text-left">
-            <p>Name</p>
-            <p>Soil</p>
-            <p>Pot material</p>
-            <p>Pot style</p>
-            <p>Extras</p>
+  <body>
+    <div>
+      <div class="plant-created plant-details" id="plant-preview">
+        <div class="plant-preview order-plant" id="plant-preview">
+          <h2>Your Plant</h2>
+          <div class="empty-container"></div>
+          <div class="result-container">
+            <div class="result-text-left">
+              <p>Name</p>
+              <p>Soil</p>
+              <p>Pot material</p>
+              <p>Pot style</p>
+              <p>Extras</p>
+            </div>
+            <div class="result-text-right">
+              <p id="orderName"></p>
+              <p id="orderSoil"></p>
+              <p id="orderPot"></p>
+              <p id="orderPotMaterial"></p>
+              <p id="orderPotStyle"></p>
+              <p id="orderExtras"></p>
+              <p id="potColor"></p>
+            </div>
           </div>
-          <div class="result-text-right">
-            <p id="orderName"></p>
-            <p id="orderSoil"></p>
-            <p id="orderPot"></p>
-            <p id="orderPotMaterial"></p>
-            <p id="orderPotStyle"></p>
-            <p id="orderExtras"></p>
-          </div>
+          <div class="plant-details" id="orderImages"></div>
         </div>
-        <div class="plant-details" id="orderImages"></div>
+        <div class="button-container">
+          <a href="customize.html" type="submit" class="send-button"
+            >Back to customization</a
+          >
+        </div>
       </div>
-      <div class="button-container">
-        <a href="customize.html" type="submit" class="send-button">Back to customization</a>
+
+      <div class="order-details">
+        <h2>Plant with custom pot and special soil</h2>
+        <div class="order-message" id="inventoryAlert"></div>
+        <button id="orderNowButton" class="order-now">Order now!</button>
+
+        <div class="more-info-stock" id="priceBreakdownAccordion">
+          <div class="more-info-stock-header">Price Breakdown</div>
+          <div class="more-info-stock-content" id="priceBreakdownContent"></div>
+        </div>
+
+        <div class="more-info-stock" id="inventoryAccordion">
+          <div class="more-info-stock-header">Inventory Alerts</div>
+          <div
+            class="more-info-stock-content"
+            id="inventoryAlertsContent"
+          ></div>
+        </div>
+
+        <div class="more-info-stock" id="plantDescriptionAccordion">
+          <div class="more-info-stock-header">Plant Description</div>
+          <div
+            class="more-info-stock-content"
+            id="plantDescriptionContent"
+          ></div>
+        </div>
+
+        <div class="more-info-stock" id="caringTipsAccordion">
+          <div class="more-info-stock-header">Caring Tips</div>
+          <div class="more-info-stock-content" id="caringTipsContent"></div>
+        </div>
       </div>
+      <div class="plant-images" id="orderImages"></div>
     </div>
 
-    <div class="order-details">
-      <h2>Plant with custom pot and special soil</h2>
-      <div class="order-message" id="inventoryAlert"></div>
-      <button id="orderNowButton" class="order-now">Order now!</button>
-
-      <div class="more-info-stock" id="inventoryAccordion">
-        <div class="more-info-stock-header">Inventory Alerts</div>
-        <div class="more-info-stock-content" id="inventoryAlertsContent">
-
-        </div>
-      </div>
-
-      <div class="more-info-stock" id="plantDescriptionAccordion">
-        <div class="more-info-stock-header">Plant Description</div>
-        <div class="more-info-stock-content" id="plantDescriptionContent">
-        </div>
-      </div>
-
-      <div class="more-info-stock" id="caringTipsAccordion">
-        <div class="more-info-stock-header">Caring Tips</div>
-        <div class="more-info-stock-content" id="caringTipsContent">
-        </div>
-      </div>
-
-      <div class="more-info-stock" id="priceBreakdownAccordion">
-        <div class="more-info-stock-header">Price Breakdown</div>
-        <div class="more-info-stock-content" id="priceBreakdownContent">
-        </div>
-      </div>    </div>
-    <div class="plant-images" id="orderImages"></div>
-  </div>
-
-  <script src="./order_details.js" type="module"></script>
-</body>
-
+    <script src="./order_details.js" type="module"></script>
+  </body>
 </html>

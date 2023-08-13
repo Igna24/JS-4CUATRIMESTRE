@@ -1,12 +1,12 @@
 export default class PlantBuilder {
   constructor() {
-    this.name = "";
-    this.soil = "";
-    this.pot = "";
-    this.potMaterial = "";
-    this.potStyle = "";
+    this.name = '';
+    this.soil = '';
+    this.pot = '';
+    this.potMaterial = '';
+    this.potStyle = '';
     this.extras = [];
-    this.plantImage = "";
+    this.plantImage = '';
   }
 
   withPlantImage(plantImage) {
