@@ -1,0 +1,42 @@
+# Plant Recommendation
+
+This project provides a plant recommendation tool based on user preferences. It helps users find the most suitable plants for their specific conditions and preferences, such as lighting, pet-friendliness, watering habits, and style.
+
+## Features
+
+- Interactive form to gather user preferences for plant placement, sunlight, pets, watering habits, and style.
+- Utilizes a recommendation algorithm to suggest appropriate plants based on the user's inputs.
+- Allows users to add extra elements to their plant, such as moss poles, pebbles, or smaller plants.
+- Provides a clear button to reset the form and start over.
+- Displays the recommended plant with relevant details and an image.
+
+## Technologies Used
+
+- HTML5, CSS3: for structuring and styling the web page.
+- JavaScript: for handling user interactions, form submission, and generating plant recommendations.
+
+## Getting Started
+
+To run the project locally, follow these steps:
+
+1. Clone the repository: `https://github.com/Igna24/JS-4CUATRIMESTRE.git>`
+2. Navigate to the project directory: `cd plant-recommendation`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open a web browser and go to `http://localhost:` to view the project.
+
+## Contributing
+
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature-name` or `git checkout -b bugfix/your-bug-fix`
+3. Make your changes and commit them: `git commit -m 'Add some feature'` or `git commit -m 'Fix a bug'`
+4. Push to your branch: `git push origin feature/your-feature-name` or `git push origin bugfix/your-bug-fix`
+5. Submit a pull request detailing your changes.
+
+## License
+
+This project is licensed under the [ISC License](LICENSE).
+
+© 2023 Ignacio Marín Garro. All rights reserved.
